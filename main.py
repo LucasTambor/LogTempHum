@@ -7,10 +7,34 @@
 ################################################################################
 
 import modbus
+import RP.GPIO as GPIO
+import leitura
 
-sensores = modbus.Configuracao()
+def main(self):
+    
+     
+    #Instancia criada da classe Configuracao
+    config = modbus.Configuracao()
+
+    #Lista de sensores conectados
+    sensores = config.pega_lista
+    print (sensores)
+
+    #LEITURA TEMPERATURA
+
+    #intancia da classe Leitura
+    ler = leitura.Leitura()
+
+    #Lista de temperaturas (lista de sensores conectados)
+    temperaturas = ler.leitura_temperatura(sensores)
+    print (temperaturas)
+
+    #LEITURA UMIDADE
+
+    umidades = ler.temperatura_umidade(sensores)
+    print (umidades)
 
 
-print (sensores.sensores)
+
 
 

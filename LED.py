@@ -1,9 +1,10 @@
 ########################################
 #Classe LED, acende ou apaga LED       #
-#recebe porta onde esta conectado o LED#           #
+#recebe porta onde esta conectado o LED#           
 ########################################
 
 import RPi.GPIO as GPIO
+import time
 
 class LED:
     
@@ -25,6 +26,22 @@ class LED:
 
     def apaga_led (self):
         GPIO.output(self.porta, 0)
+
+    def pisca_led (self):
+        GPIO.output(self.porta,1)
+        time.sleep(0.5)
+        GPIO.output(self.porta, 0)
+        time.sleep(0.5)
+
+        GPIO.output(self.porta,1)
+        time.sleep(0.5)
+        GPIO.output(self.porta, 0)
+        time.sleep(0.5)
+
+        GPIO.output(self.porta,1)
+        time.sleep(0.5)
+        GPIO.output(self.porta, 0)
+        time.sleep(0.5)
 
 
 
